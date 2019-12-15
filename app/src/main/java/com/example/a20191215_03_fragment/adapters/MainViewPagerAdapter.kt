@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.a20191215_03_fragment.fragments.FirstFragment
 import com.example.a20191215_03_fragment.fragments.SecondFragment
+import com.example.a20191215_03_fragment.fragments.ThirdFragment
 
 class MainViewPagerAdapter (fm:FragmentManager):FragmentPagerAdapter(fm){
     override fun getItem(position: Int): Fragment {
@@ -17,7 +18,8 @@ class MainViewPagerAdapter (fm:FragmentManager):FragmentPagerAdapter(fm){
 //        }
         return when(position){
             0 -> { FirstFragment() }
-            else -> { SecondFragment() }
+            1 -> { SecondFragment() }
+            else -> { ThirdFragment() }
         }
     }
 
