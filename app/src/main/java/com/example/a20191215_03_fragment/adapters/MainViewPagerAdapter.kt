@@ -7,7 +7,16 @@ import com.example.a20191215_03_fragment.fragments.FirstFragment
 import com.example.a20191215_03_fragment.fragments.SecondFragment
 import com.example.a20191215_03_fragment.fragments.ThirdFragment
 
-class MainViewPagerAdapter (fm:FragmentManager):FragmentPagerAdapter(fm){
+class MainViewPagerAdapter (fm:FragmentManager): FragmentPagerAdapter(fm){
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return when(position){
+            0 -> {"사용자정보"}
+            1 -> {"두번째화면"}
+            else->{"마지막"}
+        }
+    }
+
     override fun getItem(position: Int): Fragment {
 //        자바문법
 //        if(position == 0){
@@ -24,7 +33,7 @@ class MainViewPagerAdapter (fm:FragmentManager):FragmentPagerAdapter(fm){
     }
 
     override fun getCount(): Int {
-        return 2
+        return 3
     }
 
 }
